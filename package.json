@@ -1,0 +1,8 @@
+{
+  "name": "contato-mais",
+  "version": "1.0.0",
+  "description": "Landing page Contato+",
+  "scripts": {
+    "build": "echo 'Static site'"
+  }
+}
