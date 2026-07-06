@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato+ | Reative Sua Base de Leads e Multiplique Vendas</title>
+    <meta name="description" content="Reative sua base de leads com cadências estratégicas, BI e controle de funil. Transforme leads parados em vendas reais.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --azul: #1a6ef5;
+            --azul-vivo: #2979ff;
+            --azul-escuro: #060f1e;
+            --azul-medio: #0d1f3c;
+            --azul-card: #0e1e38;
+            --azul-borda: rgba(41, 121, 255, 0.25);
+            --branco: #ffffff;
+            --cinza: #94a3b8;
+            --cinza-claro: #f1f5f9;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--azul-escuro);
+            color: var(--branco);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.2rem 0;
+            background: rgba(6, 15, 30, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--azul-borda);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--branco);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(41, 121, 255, 0.6));
+        }
+
+        .logo-badge svg {
+            width: 38px;
+            height: 38px;
+        }
+
+        nav { display: flex; gap: 2rem; align-items: center; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--cinza);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--branco); }
+
+        .btn-nav {
+            background: var(--azul-vivo);
+            color: white !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            transition: all 0.2s !important;
+            box-shadow: 0 0 20px rgba(41, 121, 255, 0.3);
+        }
+
+        .btn-nav:hover {
+            background: #1a6ef5 !important;
+            box-shadow: 0 0 30px rgba(41, 121, 255, 0.5) !important;
+            transform: translateY(-1px);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(41, 121, 255, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(41, 121, 255, 0.12);
+            border: 1px solid var(--azul-borda);
+            color: #60a5fa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            font-weight: 900;
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 .destaque {
+            background: linear-gradient(135deg, #60a5fa, var(--azul-vivo));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--cinza);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--azul-vivo);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s;
+            box-shadow: 0 0 30px rgba(41, 121, 255, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px rgba(41, 121, 255, 0.5);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--cinza);
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.2s;
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(255,255,255,0.3);
+            color: var(--branco);
+        }
+
+        /* Hero visual — funil animado */
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .funil-card {
+            background: var(--azul-card);
+            border: 1px solid var(--azul-borda);
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+        }
+
+        .funil-card:hover {
+            border-color: rgba(41, 121, 255, 0.5);
+            transform: translateX(4px);
+        }
+
+        .funil-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .funil-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .funil-label {
+            font-size: 0.9rem;
+            color: var(--cinza);
+            font-weight: 500;
+        }
+
+        .funil-num {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--branco);
+        }
+
+        .funil-bar-wrap {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 2px;
+            margin-top: 0.5rem;
+        }
+
+        .funil-bar {
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        .funil-item { flex-direction: column; align-items: flex-start; }
+
+        /* ─── PROBLEMA ─── */
+        .problema {
+            padding: 6rem 2rem;
+            background: var(--azul-medio);
+            position: relative;
+        }
+
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+
+        .section-tag {
+            display: inline-block;
+            color: #60a5fa;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .section-sub {
+            color: var(--cinza);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin-bottom: 3.5rem;
+            line-height: 1.7;
+        }
+
+        .problema-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .problema-card {
+            background: rgba(6, 15, 30, 0.6);
+            border: 1px solid var(--azul-borda);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .problema-card:hover {
+            border-color: rgba(41, 121, 255, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .problema-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .problema-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--branco);
+        }
+
+        .problema-card p {
+            font-size: 0.9rem;
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        /* ─── SERVIÇOS ─── */
+        .servicos {
+            padding: 6rem 2rem;
+            background: var(--azul-escuro);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .servico-card {
+            background: var(--azul-card);
+            border: 1px solid var(--azul-borda);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servico-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--azul-vivo), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .servico-card:hover {
+            border-color: rgba(41, 121, 255, 0.4);
+            transform: translateY(-6px);
+        }
+
+        .servico-card:hover::before { opacity: 1; }
+
+        .servico-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--azul-vivo);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+        }
+
+        .servico-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .servico-card p {
+            font-size: 0.92rem;
+            color: var(--cinza);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .servico-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .stag {
+            background: rgba(41, 121, 255, 0.1);
+            border: 1px solid var(--azul-borda);
+            color: #60a5fa;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+        }
+
+        /* ─── COMO FUNCIONA ─── */
+        .como {
+            padding: 6rem 2rem;
+            background: var(--azul-medio);
+        }
+
+        .como-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+            position: relative;
+        }
+
+        .como-steps::before {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: 12%;
+            right: 12%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--azul-borda), var(--azul-borda), transparent);
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-circle {
+            width: 52px;
+            height: 52px;
+            background: var(--azul-card);
+            border: 2px solid var(--azul-vivo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--azul-vivo);
+            margin: 0 auto 1.2rem;
+            box-shadow: 0 0 20px rgba(41, 121, 255, 0.2);
+        }
+
+        .step h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            font-size: 0.85rem;
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        /* ─── PARA QUEM ─── */
+        .para-quem {
+            padding: 6rem 2rem;
+            background: var(--azul-escuro);
+        }
+
+        .para-quem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .pq-card {
+            background: var(--azul-card);
+            border: 1px solid var(--azul-borda);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .pq-card:hover {
+            border-color: rgba(41, 121, 255, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .pq-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+
+        .pq-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .pq-card p {
+            font-size: 0.88rem;
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        /* ─── CTA ─── */
+        .cta {
+            padding: 7rem 2rem;
+            background: var(--azul-medio);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(41, 121, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta p {
+            color: var(--cinza);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--azul-escuro);
+            border-top: 1px solid var(--azul-borda);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--branco);
+            margin-bottom: 0.8rem;
+        }
+
+        footer p {
+            color: var(--cinza);
+            font-size: 0.85rem;
+        }
+
+        /* ─── WHATSAPP FLOAT ─── */
+        .wpp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .wpp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .wpp-float svg { width: 30px; height: 30px; fill: white; }
+
+        /* ─── MOBILE ─── */
+        .mobile-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--branco);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 968px) {
+            nav { display: none; }
+            .mobile-btn { display: flex; }
+            .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .problema-grid { grid-template-columns: 1fr; }
+            .servicos-grid { grid-template-columns: 1fr; }
+            .como-steps { grid-template-columns: repeat(2, 1fr); }
+            .como-steps::before { display: none; }
+            .para-quem-grid { grid-template-columns: 1fr; }
+            .cta h2 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .como-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <div class="logo-badge">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Balão de chat (fundo azul) -->
+                    <path d="M4 4 Q4 2 6 2 L34 2 Q36 2 36 4 L36 26 Q36 28 34 28 L14 28 L6 36 L6 28 Q4 28 4 26 Z" fill="#2979ff"/>
+                    <!-- Sinal de + branco no centro -->
+                    <line x1="20" y1="11" x2="20" y2="21" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="15" y1="16" x2="25" y2="16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            Contato+
+        </a>
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#como">Como Funciona</a>
+            <a href="#para-quem">Para Quem</a>
+            <a href="https://wa.me/5511948198060?text=Ol%C3%A1%2C+quero+saber+mais+sobre+a+Contato%2B" class="btn-nav">Falar Agora</a>
+        </nav>
+        <button class="mobile-btn">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+        <div>
+            <span class="tag">🔥 Repescagem + Funil + BI</span>
+            <h1>Sua base de leads<br>vale mais do que<br><span class="destaque">você imagina.</span></h1>
+            <p>Você já tem os leads. O problema é que eles estão parados. A Contato+ reativa, converte e analisa — transformando base esquecida em receita real.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5511948198060?text=Ol%C3%A1%2C+quero+reativar+minha+base+de+leads" class="btn-primary">
+                    Reativar Minha Base →
+                </a>
+                <a href="#servicos" class="btn-ghost">Ver como funciona</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div style="width:100%; display:flex; flex-direction:column; gap:0.8rem;">
+                <div style="background:rgba(14,30,56,0.8); border:1px solid rgba(41,121,255,0.2); border-radius:14px; padding:1.2rem 1.6rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div style="display:flex;align-items:center;gap:0.8rem;">
+                        <div style="width:10px;height:10px;border-radius:50%;background:#60a5fa;flex-shrink:0;"></div>
+                        <span style="font-size:0.88rem;color:#94a3b8;">Base de Leads</span>
+                    </div>
+                    <span style="font-size:1.5rem;font-weight:800;">2.400</span>
+                </div>
+                <div style="background:rgba(14,30,56,0.8); border:1px solid rgba(41,121,255,0.2); border-radius:14px; padding:1.2rem 1.6rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div style="display:flex;align-items:center;gap:0.8rem;">
+                        <div style="width:10px;height:10px;border-radius:50%;background:#34d399;flex-shrink:0;"></div>
+                        <span style="font-size:0.88rem;color:#94a3b8;">Reativados</span>
+                    </div>
+                    <span style="font-size:1.5rem;font-weight:800;color:#34d399;">+380</span>
+                </div>
+                <div style="background:rgba(14,30,56,0.8); border:1px solid rgba(41,121,255,0.2); border-radius:14px; padding:1.2rem 1.6rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div style="display:flex;align-items:center;gap:0.8rem;">
+                        <div style="width:10px;height:10px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div>
+                        <span style="font-size:0.88rem;color:#94a3b8;">Reuniões Marcadas</span>
+                    </div>
+                    <span style="font-size:1.5rem;font-weight:800;color:#f59e0b;">47</span>
+                </div>
+                <div style="background:rgba(14,30,56,0.8); border:1px solid rgba(41,121,255,0.2); border-radius:14px; padding:1.2rem 1.6rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div style="display:flex;align-items:center;gap:0.8rem;">
+                        <div style="width:10px;height:10px;border-radius:50%;background:#a78bfa;flex-shrink:0;"></div>
+                        <span style="font-size:0.88rem;color:#94a3b8;">Vendas Fechadas</span>
+                    </div>
+                    <span style="font-size:1.5rem;font-weight:800;color:#a78bfa;">12</span>
+                </div>
+                <div style="background:rgba(41,121,255,0.08); border:1px solid rgba(41,121,255,0.3); border-radius:14px; padding:1rem 1.6rem; text-align:center;">
+                    <span style="font-size:0.8rem;color:#60a5fa;font-weight:600;">📊 Relatório atualizado em tempo real</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problema" id="problema">
+    <div class="section-inner">
+        <span class="section-tag">O Problema</span>
+        <h2 class="section-title">Você reconhece alguma<br>dessas situações?</h2>
+        <p class="section-sub">A maioria das empresas tem o mesmo problema: leads que custaram caro para captar, mas nunca foram trabalhados direito.</p>
+        <div class="problema-grid">
+            <div class="problema-card">
+                <div class="problema-icon">📦</div>
+                <h3>Base parada há meses</h3>
+                <p>Milhares de leads no CRM ou planilha que ninguém liga, ninguém manda mensagem. Dinheiro parado esperando alguém agir.</p>
+            </div>
+            <div class="problema-card">
+                <div class="problema-icon">📉</div>
+                <h3>Volume alto, conversão baixa</h3>
+                <p>Leads chegam, mas poucos viram clientes. O funil trava em algum ponto e ninguém sabe exatamente onde nem por quê.</p>
+            </div>
+            <div class="problema-card">
+                <div class="problema-icon">🔍</div>
+                <h3>Sem visibilidade do funil</h3>
+                <p>Não sabe quantos leads estão em cada etapa, qual vendedor performa melhor ou qual canal traz mais resultado.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+    <div class="section-inner">
+        <span class="section-tag">O que fazemos</span>
+        <h2 class="section-title">Três frentes que transformam<br>sua operação comercial</h2>
+        <p class="section-sub">Não é só prospectar. É pegar o que você já tem, trabalhar com inteligência e entregar resultado mensurável.</p>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <div class="servico-num">01 — Principal</div>
+                <h3>🔄 Repescagem de Leads</h3>
+                <p>Reativamos sua base com cadências estratégicas de ligações e mensagens. Leads que disseram "não" ou sumiram voltam para o funil com abordagem certa no momento certo.</p>
+                <div class="servico-tags">
+                    <span class="stag">Cadência de mensagens</span>
+                    <span class="stag">Ligações estratégicas</span>
+                    <span class="stag">Segmentação de base</span>
+                </div>
+            </div>
+            <div class="servico-card">
+                <div class="servico-num">02 — Diferencial</div>
+                <h3>📊 BI e Análise de Dados</h3>
+                <p>Analisamos sua base de clientes e leads para identificar padrões, perfis com maior potencial de conversão e gargalos no processo comercial. Decisão baseada em dado, não em achismo.</p>
+                <div class="servico-tags">
+                    <span class="stag">Análise de perfil</span>
+                    <span class="stag">Segmentação inteligente</span>
+                    <span class="stag">Relatórios claros</span>
+                </div>
+            </div>
+            <div class="servico-card">
+                <div class="servico-num">03 — Estrutura</div>
+                <h3>🎯 Controle de Funil</h3>
+                <p>Mapeamos e gerenciamos cada etapa do seu funil comercial. Você sabe exatamente onde cada lead está, o que está travando e o que precisa ser feito para avançar.</p>
+                <div class="servico-tags">
+                    <span class="stag">Pipeline estruturado</span>
+                    <span class="stag">Acompanhamento diário</span>
+                    <span class="stag">Métricas em tempo real</span>
+                </div>
+            </div>
+            <div class="servico-card">
+                <div class="servico-num">04 — Complementar</div>
+                <h3>📞 Prospecção Ativa</h3>
+                <p>Quando necessário, fazemos prospecção fria via ligações e mensagens para complementar sua base. Foco em qualidade: leads qualificados que chegam prontos para conversar.</p>
+                <div class="servico-tags">
+                    <span class="stag">Cold call</span>
+                    <span class="stag">Outbound mensagens</span>
+                    <span class="stag">Leads qualificados</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como" id="como">
+    <div class="section-inner">
+        <span class="section-tag">Processo</span>
+        <h2 class="section-title">Como a Contato+ trabalha</h2>
+        <p class="section-sub">Um processo simples, transparente e focado em resultado desde o primeiro dia.</p>
+        <div class="como-steps">
+            <div class="step">
+                <div class="step-circle">1</div>
+                <h4>Diagnóstico da Base</h4>
+                <p>Analisamos seus leads, histórico e funil para entender onde está o maior potencial.</p>
+            </div>
+            <div class="step">
+                <div class="step-circle">2</div>
+                <h4>Estratégia Personalizada</h4>
+                <p>Montamos a cadência de repescagem e o plano de ação com base nos dados reais.</p>
+            </div>
+            <div class="step">
+                <div class="step-circle">3</div>
+                <h4>Execução e Controle</h4>
+                <p>Executamos as ações diariamente com acompanhamento total do funil em tempo real.</p>
+            </div>
+            <div class="step">
+                <div class="step-circle">4</div>
+                <h4>Relatório e Resultado</h4>
+                <p>Você recebe relatórios claros com métricas, conversões e próximos passos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="para-quem" id="para-quem">
+    <div class="section-inner">
+        <span class="section-tag">Para Quem</span>
+        <h2 class="section-title">A Contato+ é para você se...</h2>
+        <p class="section-sub">Atendemos empresas que já têm estrutura mas precisam extrair mais resultado do que já construíram.</p>
+        <div class="para-quem-grid">
+            <div class="pq-card">
+                <div class="pq-icon">📂</div>
+                <h3>Tem base grande e parada</h3>
+                <p>Acumulou leads ao longo dos anos mas nunca trabalhou de forma estruturada para reativá-los.</p>
+            </div>
+            <div class="pq-card">
+                <div class="pq-icon">🔁</div>
+                <h3>Tem volume mas não converte</h3>
+                <p>Leads chegam, mas o funil trava. A taxa de conversão está abaixo do potencial e você não sabe por quê.</p>
+            </div>
+            <div class="pq-card">
+                <div class="pq-icon">📈</div>
+                <h3>Quer visibilidade do comercial</h3>
+                <p>Precisa de dados claros sobre o funil, performance da equipe e onde estão as oportunidades perdidas.</p>
+            </div>
+            <div class="pq-card">
+                <div class="pq-icon">🏢</div>
+                <h3>Empresas B2B</h3>
+                <p>Indústrias, consultorias, agências e prestadores de serviço com ciclo de venda mais longo.</p>
+            </div>
+            <div class="pq-card">
+                <div class="pq-icon">🚀</div>
+                <h3>Quer escalar sem contratar</h3>
+                <p>Precisa de resultado comercial sem montar uma equipe grande. Terceiriza a operação e foca no negócio.</p>
+            </div>
+            <div class="pq-card">
+                <div class="pq-icon">💡</div>
+                <h3>Quer decisão baseada em dado</h3>
+                <p>Cansou de gerenciar o comercial no feeling. Quer análise real da base para tomar decisões melhores.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="section-inner">
+        <h2>Sua base de leads<br>está esperando.</h2>
+        <p>Vamos analisar o que você tem e mostrar quanto está deixando na mesa. Sem compromisso.</p>
+        <a href="https://wa.me/5511948198060?text=Ol%C3%A1%2C+quero+analisar+minha+base+de+leads+com+a+Contato%2B" class="btn-primary" style="font-size:1.1rem; padding:1rem 2.5rem;">
+            Quero Analisar Minha Base →
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">
+        <div class="logo-badge">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4 Q4 2 6 2 L34 2 Q36 2 36 4 L36 26 Q36 28 34 28 L14 28 L6 36 L6 28 Q4 28 4 26 Z" fill="#2979ff"/>
+                <line x1="20" y1="11" x2="20" y2="21" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <line x1="15" y1="16" x2="25" y2="16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </div>
+        Contato+
+    </div>
+    <p>© 2026 Contato+ — Repescagem, Funil e BI para empresas B2B</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5511948198060?text=Ol%C3%A1%2C+quero+saber+mais+sobre+a+Contato%2B" class="wpp-float" target="_blank">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
+</body>
+</html>
